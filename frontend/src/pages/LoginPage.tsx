@@ -1,55 +1,29 @@
-import { FC } from 'react';
-import { useForm } from 'react-hook-form';
-import { UserLogin } from '../models';
-import { Link, useNavigate } from 'react-router-dom';
-import { useMutation } from '@tanstack/react-query';
-import { UsersApi } from '../services';
+import { FC, useState } from 'react';
+import LoginForm from '../components/LoginForm';
+import RegisterForm from '../components/RegisterForm';
 
 
 const LoginPage: FC = () => {
-  const { mutate: loginUser } = useMutation({
-    mutationFn: (body: UserLogin) => UsersApi.loginUser(body),
-    onSuccess: () => {
-      console.log('User login successful!');
-      navigate(`/`);
-    },
-  });
-
-  const { register, handleSubmit } = useForm<UserLogin>();
-  const onSubmit = (data: UserLogin) => loginUser(data);
-  const navigate = useNavigate();
+  const [hasAccount, setHasAccount] = useState<Boolean>(true);
 
   return (
     <>
-      <div className="only-block__container">
-        <div className="only-block">
-          <h1 className="text-semibold">ProjectForge</h1>
-          <div className="header-divider"></div>
-
+      <div className='only-block__container'>
+        <h1 className='heading'>ProjectForge</h1>
+        <div className='login-container'>
+          <div className='options'>
+            <div className={'options__login ' + (hasAccount ? 'option--active' : 'option--inactive')} onClick={ () => {setHasAccount(true);} }>
+              <h2 className='heading'>Login</h2>
+            </div>
+            <div className={'options__register ' + (hasAccount ? 'option--inactive' : 'option--active')} onClick={ () => {setHasAccount(false);} }>
+              <h2 className='heading'>Register</h2>
+            </div>
+          </div>
+          {hasAccount ? <LoginForm /> : <RegisterForm />}
         </div>
       </div>
     </>
   );
 };
-
-
-const loginForm: FC = () => {
-  return (
-    <form className="form" onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="nickname">Nickname:</label>
-      <input type='text' name='nickname'></input>
-      <br />
-      <label htmlFor="password">Password:</label>
-      <input type='text' name='password'></input>
-    </form>
-  );
-}
-
-const registerForm: FC = () => {
-  return (
-    <>
-    </>
-  );
-}
 
 export default LoginPage;

@@ -1,0 +1,81 @@
+.only-block__container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 56px;
+    margin-bottom: 20px;
+  }
+}
+
+.login-container {
+  position: relative;
+  max-width: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background-color: $secondaryColor;
+  border: 1px solid $secondaryColor;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: $secondaryColor;
+  border-radius: 20px;
+}
+
+.options__login, .options__register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+
+  h2 {
+    font-size: 24px;
+    color:$secondaryColor;
+  }
+}
+
+.options__login {
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.options__register {
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.option--inactive {
+  background-color: $backgroundColor;
+  transition: .1s;
+
+  h2 {
+    color: $secondaryColor;
+  }
+
+  &:hover {
+    background-color: $focusColor;
+    cursor: pointer;
+
+    h2 {
+      color: $secondaryColor;
+    }
+  }
+}
+
+.option--active {
+  background-color: $secondaryColor;
+
+  h2 {
+    color: $textColor;
+  }
+}
