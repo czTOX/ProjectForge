@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserLogin } from '../models';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { UsersApi } from '../services';
 
@@ -22,10 +22,10 @@ const LoginForm: FC = () => {
   return (
     <form className="form" onSubmit={handleSubmit(onSubmit)}>
       <div className="form__input">
-        <input type='text' name='user' placeholder='Username' />
+        <input type='email' placeholder='Email' {...register('email', { required: true })}/>
       </div>
       <div className="form__input">
-        <input type='text' name='password' placeholder='Password' />
+        <input type='text' placeholder='Password' {...register('hashedPassword', { required: true })}/>
       </div>
       <button className='form__button text-bold' type='submit'>Login</button>
     </form>

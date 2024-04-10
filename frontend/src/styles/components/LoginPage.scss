@@ -19,17 +19,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 20px;
-  background-color: $secondaryColor;
-  border: 1px solid $secondaryColor;
+  margin-top: 50px;
 }
 
 .options {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: $secondaryColor;
-  border-radius: 20px;
+  background-color: $backgroundColor;
 }
 
 .options__login, .options__register {
@@ -37,21 +34,13 @@
   justify-content: center;
   align-items: center;
   width: 50%;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
 
   h2 {
     font-size: 24px;
     color:$secondaryColor;
   }
-}
-
-.options__login {
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.options__register {
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
 }
 
 .option--inactive {
