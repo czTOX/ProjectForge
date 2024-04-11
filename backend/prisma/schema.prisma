@@ -28,7 +28,7 @@ model User {
 model Team {
   id                Int         @id @default(autoincrement())
   name              String
-  profilePicture    String
+  profilePic        String      @default("")
 
   users             User[]      @relation("UsersTeams")
   projects          Project[]
@@ -42,15 +42,14 @@ model Project {
   team              Team        @relation(fields: [teamId], references: [id])
   teamId            Int
   tasks             Task[]
-
-
+  messages          Message[]
 }
 
 model Task {
   id                Int         @id @default(autoincrement())
   name              String
   createdAt         DateTime?   @default(now())
-  editedAt          DateTime?
+  editedAt          DateTime?   @default(now())
   status            Int         @default(0)
   creatorId         Int
 
@@ -77,4 +76,6 @@ model Message {
 
   author            User        @relation(fields: [authorId], references: [id])
   authorId          Int
+  project           Project     @relation(fields: [projectId], references: [id])
+  projectId         Int
 }
