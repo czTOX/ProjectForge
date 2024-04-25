@@ -4,15 +4,19 @@ import { UserRegistration } from '../models';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@tanstack/react-query';
 import { UsersApi } from '../services';
+import { useSetRecoilState } from 'recoil';
+import { loggedInAtom } from '../state/atoms';
 
 const RegisterForm: FC = () => {
+  const setLoggedIn = useSetRecoilState(loggedInAtom);
   const navigate = useNavigate();
 
   const { mutate: registerUser } = useMutation({
     mutationFn: (body: UserRegistration) => UsersApi.registerUser(body),
     onSuccess: () => {
-      console.log('User login successful!');
-      navigate(`/`);
+      console.log('User registration successful!');
+      setLoggedIn(true);
+      navigate('/user');
     },
   });
   

@@ -41,7 +41,41 @@ body {
   margin: 0;
 }
 
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column
+}
+
+main {
+  height: calc(100vh - 60px - 40px)
+}
+
+.container {
+  max-width: 78%;
+  width: 100%;
+  margin: auto;
+}
+
+.divider {
+  background: $secondaryColor;
+  height: 10px;
+  width: 250px;
+}
+
+.divider--small {
+  background: $secondaryColor;
+  height: 8px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
 // Imports
 
 @import 'components/LoginPage.scss';
+@import 'components/ErrorPage.scss';
+@import 'components/MainPage.scss';
 @import 'components/forms.scss';
+@import 'components/Header.scss';
+@import 'components/Footer.scss';

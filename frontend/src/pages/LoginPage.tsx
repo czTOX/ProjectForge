@@ -8,7 +8,7 @@ const LoginPage: FC = () => {
 
   return (
     <>
-      <div className='only-block__container'>
+      <main className='login center'>
         <h1 className='heading'>ProjectForge</h1>
         <div className='login-container'>
           <div className='options'>
@@ -21,7 +21,7 @@ const LoginPage: FC = () => {
           </div>
           {hasAccount ? <LoginForm /> : <RegisterForm />}
         </div>
-      </div>
+      </main>
     </>
   );
 };

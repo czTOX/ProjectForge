@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 60px;
+  background-color: $secondaryColor;
+  color: white;
+}
+
+.header__logo {
+  a {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+
+    &:hover {
+      color: $focusColor;
+    }
+  }
+}
+
+.header__navbar {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.navbar__item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  transition: .3s;
+  text-transform: uppercase;
+  padding-left: 25px;
+  padding-right: 25px;
+  cursor: pointer;
+
+  svg {
+    transition: .3s;
+    margin-left: 10px;
+  }
+
+  &:hover {
+    color: $secondaryColor;
+    background: $focusColor;
+
+    svg {
+      fill: $secondaryColor;
+    }
+  }
+}

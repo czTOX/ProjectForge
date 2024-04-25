@@ -8,30 +8,17 @@ const UserLoginSchema = z.object({
 });
 
 const UserRegistrationSchema = z.object({
-  firstName: z
-    .string({ required_error: 'Missing `firstName` parameter' })
-    .nonempty(),
-  lastName: z
-    .string({ required_error: 'Missing `lastName` parameter' })
-    .nonempty(),
   email: z.string({ required_error: 'Missing `email` parameter' }).nonempty(),
   hashedPassword: z
     .string({ required_error: 'Missing `password` parameter' })
     .nonempty(),
-});
+}).merge(UserLoginSchema);
 
-const UserSchema = z.object({
-  firstName: z
-    .string({ required_error: 'Missing `firstName` parameter' })
-    .nonempty(),
-  lastName: z
-    .string({ required_error: 'Missing `lastName` parameter' })
-    .nonempty(),
-  phoneNumber: z
-    .string({ required_error: 'Missing `phoneNumber` parameter' })
-    .nonempty(),
-  email: z.string({ required_error: 'Missing `email` parameter' }).nonempty(),
-});
+export const UserSchema = z
+  .object({
+    id: z.number(),
+  })
+  .merge(UserRegistrationSchema);
 
 export type User = z.infer<typeof UserSchema>;
 export type UserLogin = z.infer<typeof UserLoginSchema>;
