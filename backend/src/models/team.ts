@@ -1,6 +1,6 @@
 import z from 'zod';
 import { UserSchema } from './user';
-import { ProjectSchema } from './project';
+import { ProjectCreateSchema } from './project';
 
 
 export const TeamCreateSchema = z.object({
@@ -11,7 +11,7 @@ export const TeamCreateSchema = z.object({
 export const TeamSchema = z.object({
   id: z.number(),
   users: z.array(UserSchema),
-  projects: z.array(ProjectSchema),
+  projects: z.array(ProjectCreateSchema),
 }).merge(TeamCreateSchema);
 
 export type TeamCreate = z.infer<typeof TeamCreateSchema>;

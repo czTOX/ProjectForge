@@ -1,12 +1,10 @@
 import z from 'zod';
-import { UserSchema } from './user';
-import { TaskSchema } from './task';
 
 
 export const MessageCreateSchema = z.object({
   content: z.string({ required_error: 'Missing `content` parameter' }).nonempty(),
   projectId: z.number({ required_error: 'Missing `projectId` parameter' }),
-  userId: z.number({ required_error: 'Missing `userId` parameter' }),
+  authorId: z.number({ required_error: 'Missing `authorId` parameter' }),
 });
 
 export const MessageSchema = z.object({
