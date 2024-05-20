@@ -29,7 +29,7 @@ const NewTaskForm: FC<NewTaskFormInterface> = (props: NewTaskFormInterface) => {
       <div className="newProjectPopup">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form__input">
-            <input type='text' placeholder='Name' {...register('name', { required: true })}/>
+            <input type='text' placeholder='Name' maxLength={16} {...register('name', { required: true })}/>
           </div>
           <div className="form__input">
             <input type='text' placeholder='Description' {...register('description', { required: false })}/>

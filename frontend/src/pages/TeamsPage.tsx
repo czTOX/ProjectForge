@@ -44,7 +44,7 @@ const TeamsPage: FC = () => {
           <div className="newTeamPopup">
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form__input">
-                <input type='text' placeholder='Team name' {...register('name', { required: true })}/>
+                <input type='text' placeholder='Team name' maxLength={12} {...register('name', { required: true })}/>
                 <button className='form__button text-bold' type='submit'>Create new</button>
               </div>
             </form>
@@ -61,7 +61,7 @@ const TeamsPage: FC = () => {
         </div>
       }
       <div className="container teamsPage">
-        <div className="subPage__header">
+        <div className="teamsPage__header">
           <h1 className="heading">My Teams</h1>
           <button className='subPage__header--addNew text-bold' onClick={() => {setOpened(true);}}>+ Add new</button>
         </div>

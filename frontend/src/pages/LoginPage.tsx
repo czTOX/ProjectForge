@@ -7,8 +7,8 @@ const LoginPage: FC = () => {
   const [hasAccount, setHasAccount] = useState<Boolean>(true);
 
   return (
-    <>
-      <main className='login center'>
+    <div className='main__container'>
+      <div className='login center'>
         <h1 className='heading'>ProjectForge</h1>
         <div className='login-container'>
           <div className='options'>
@@ -21,8 +21,8 @@ const LoginPage: FC = () => {
           </div>
           {hasAccount ? <LoginForm /> : <RegisterForm />}
         </div>
-      </main>
-    </>
+      </div>
+    </div>
   );
 };
 

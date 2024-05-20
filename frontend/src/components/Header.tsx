@@ -8,6 +8,10 @@ import { useMutation } from '@tanstack/react-query';
 
 
 const Header: FC = () => {
+  function toggleMenu() {
+    document.getElementById('menu')?.classList.toggle('menu--show');
+  }
+
   const navigate = useNavigate();
   const isLoggedIn = useRecoilState(loggedInAtom);
   const setLoggedIn = useSetRecoilState(loggedInAtom);
@@ -32,6 +36,7 @@ const Header: FC = () => {
         }
         </div>
         {isLoggedIn[0] &&
+        <>
           <div className='header__navbar'>
             <Link to='/teams' className='navbar__item heading'>Teams</Link>
             <Link to='/projects' className='navbar__item heading'>Projects</Link>
@@ -50,6 +55,12 @@ const Header: FC = () => {
               </svg>
             </div>
           </div>
+          <div id="hamburger_menu" onClick={() => (toggleMenu())}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </>
         }
       </header>
     </>

@@ -6,7 +6,22 @@
     font-size: 46px;
     font-weight: 700;
     margin-bottom: 10px;
+
+    @media only screen and (max-width: 800px) { 
+      font-size: 38px;
+    }
+
+    @media only screen and (max-width: 500px) { 
+      font-size: 30px;
+    }
   }
+}
+
+.teamsPage__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .teamsList {
@@ -15,6 +30,14 @@
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 3em;
   grid-row-gap: 2em;
+
+  @media only screen and (max-width: 1150px) { 
+    grid-template-columns: repeat(2, 1fr);
+	}
+
+  @media only screen and (max-width: 750px) { 
+    grid-template-columns: 1fr;
+	}
 }
 
 .teamDetailTile {
@@ -34,6 +57,10 @@
     margin-bottom: .8em;
     font-size: 22px;
     transition: .3s;
+
+    @media only screen and (max-width: 500px) { 
+      font-size: 18px;
+    }
   }
 
   &:hover {
@@ -56,5 +83,9 @@
     display: block;
     font-size: 15px;
     transition: .3s;
+  }
+
+  @media only screen and (max-width: 500px) { 
+    font-size: 13px;
   }
 }

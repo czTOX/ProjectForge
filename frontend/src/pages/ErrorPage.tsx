@@ -9,10 +9,12 @@ const ErrorPage: FC = () => {
   const isLoggedIn = useRecoilState(loggedInAtom);
 
   return (
-    <main className="error center">
-      <h1 className="heading">Error 404 Page not found</h1>
-      {!isLoggedIn[0] && <Link to='/' className='text-regular'>Try to login first</Link>}
-    </main>
+    <div className="main__container">
+      <div className="error center">
+        <h1 className="heading">Error 404 Page not found</h1>
+        {!isLoggedIn[0] && <Link to='/' className='text-regular'>Try to login first</Link>}
+      </div>
+    </div>
   );
 };
 

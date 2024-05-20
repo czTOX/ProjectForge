@@ -18,7 +18,7 @@ const TaskSettingsPage: FC = () => {
   });
 
   const { mutate: editSettings } = useMutation({
-    mutationFn: (body: EditTask) => TasksApi.editSingle({...body, id: id || ''}),
+    mutationFn: (body: EditTask) => TasksApi.editSingle({...body, id: id || '', active: !body.active}),
     onSuccess: (res) => {
       navigate(`/tasks/${res.data.id}`);
     },

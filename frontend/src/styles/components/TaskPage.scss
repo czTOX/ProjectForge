@@ -9,7 +9,6 @@
     > a {
       text-decoration: none;
       color: $secondaryColor;
-      font-size: 46px;
       font-weight: 700;
       transition: .3s;
 
@@ -17,18 +16,46 @@
         color: $focusColor;
       }
     }
+
+    @media only screen and (max-width: 800px) { 
+      font-size: 38px;
+    }
+
+    @media only screen and (max-width: 500px) { 
+      font-size: 30px;
+    }
   }
 
   h2 {
     font-size: 36px;
     margin-bottom: 5px;
     margin-top: .8em;
+
+    @media only screen and (max-width: 800px) { 
+      font-size: 28px;
+    }
+
+    @media only screen and (max-width: 500px) { 
+      font-size: 26px;
+    }
+  }
+}
+
+.task__page {
+  .divider--small {
+    @media only screen and (max-width: 500px) { 
+      display: none;
+    }
   }
 }
 
 .task__subheader {
   display: flex;
   justify-content: space-between;
+
+  @media only screen and (max-width: 500px) { 
+    flex-direction: column;
+  }
 }
 
 .task__info {
@@ -58,6 +85,11 @@
   &:not(:first-child) {
     margin-top: 0.5em;
   }
+
+  @media only screen and (max-width: 500px) { 
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }
 
 .taskWorkLine__worker {
@@ -67,6 +99,12 @@
 
   .avatar--small {
     margin-left: 1em;
+  }
+
+  span {
+    @media only screen and (max-width: 500px) { 
+      display: none;
+    }
   }
 }
 

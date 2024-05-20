@@ -16,6 +16,7 @@ import TaskPage from './pages/TaskPage';
 import TeamSettingsPage from './pages/TeamSettingsPage';
 import ProjectSettingsPage from './pages/ProjectSettingsPage';
 import TaskSettingsPage from './pages/TaskSettingsPage';
+import Menu from './components/Menu';
 
 function App() {
   const isLoggedIn = useRecoilState(loggedInAtom);
@@ -23,20 +24,23 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route index path="/" element={<LoginPage />} />
-        <Route index path="*" element={<ErrorPage />} />
-        { isLoggedIn[0] && <Route path="/user" element={<MainPage />} /> }
-        { isLoggedIn[0] && <Route path="/teams" element={<TeamsPage />} /> }
-        { isLoggedIn[0] && <Route path="/teams/:id" element={<TeamPage />} /> }
-        { isLoggedIn[0] && <Route path="/teams/:id/settings" element={<TeamSettingsPage />} /> }
-        { isLoggedIn[0] && <Route path="/projects" element={<ProjectsPage />} /> }
-        { isLoggedIn[0] && <Route path="/projects/:id" element={<ProjectPage />} /> }
-        { isLoggedIn[0] && <Route path="/projects/:id/settings" element={<ProjectSettingsPage />} /> }
-        { isLoggedIn[0] && <Route path="/tasks/:id" element={<TaskPage />} /> }
-        { isLoggedIn[0] && <Route path="/tasks/:id/settings" element={<TaskSettingsPage />} /> }
-        { isLoggedIn[0] && <Route path="/settings/" element={<SettingsPage />} /> }
-      </Routes>
+      { isLoggedIn[0] && <Menu />  }
+      <main>
+        <Routes>
+          <Route index path="/" element={<LoginPage />} />
+          <Route index path="*" element={<ErrorPage />} />
+          { isLoggedIn[0] && <Route path="/user" element={<MainPage />} /> }
+          { isLoggedIn[0] && <Route path="/teams" element={<TeamsPage />} /> }
+          { isLoggedIn[0] && <Route path="/teams/:id" element={<TeamPage />} /> }
+          { isLoggedIn[0] && <Route path="/teams/:id/settings" element={<TeamSettingsPage />} /> }
+          { isLoggedIn[0] && <Route path="/projects" element={<ProjectsPage />} /> }
+          { isLoggedIn[0] && <Route path="/projects/:id" element={<ProjectPage />} /> }
+          { isLoggedIn[0] && <Route path="/projects/:id/settings" element={<ProjectSettingsPage />} /> }
+          { isLoggedIn[0] && <Route path="/tasks/:id" element={<TaskPage />} /> }
+          { isLoggedIn[0] && <Route path="/tasks/:id/settings" element={<TaskSettingsPage />} /> }
+          { isLoggedIn[0] && <Route path="/settings/" element={<SettingsPage />} /> }
+        </Routes>
+      </main>
       <Footer />
     </>
   )

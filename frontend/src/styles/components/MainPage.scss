@@ -4,12 +4,20 @@
     font-size: 46px;
     font-weight: 700;
     margin-bottom: 10px;
+
+    @media only screen and (max-width: 800px) { 
+      font-size: 38px;
+    }
   }
 
   h2 {
     font-size: 36px;
     margin-bottom: 5px;
     margin-top: .8em;
+
+    @media only screen and (max-width: 800px) { 
+      font-size: 28px;
+    }
   }
 }
 
@@ -28,6 +36,18 @@
   &:not(:first-child) {
     margin-top: .5em;
   }
+
+  @media only screen and (max-width: 1200px) { 
+    grid-template-columns: 0.8fr 5fr repeat(2, 2fr);
+    padding-left: 10px;
+    padding-right: 10px;
+	}
+
+  @media only screen and (max-width: 680px) { 
+    grid-template-columns: 0.8fr 5fr 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
+	}
 }
 
 .taskLine__taskName {
@@ -49,18 +69,34 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  text-wrap: nowrap;
 
   .avatar--small {
     margin-left: .5em;
   }
+
+  @media only screen and (max-width: 800px) { 
+    span {
+      display: none;
+    }
+	}
 }
 
 .taskLine__time {
   margin-left: 15%;
+
+  @media only screen and (max-width: 1200px) { 
+    display: none;
+	}
 }
 
 .taskLine__deadline {
   margin-left: 15%;
+  text-wrap: nowrap;
+
+  @media only screen and (max-width: 680px) { 
+    display: none;
+	}
 }
 
 .main__projects {
@@ -68,6 +104,22 @@
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 2.5em;
   grid-row-gap: 2em;
+
+  @media only screen and (max-width: 1450px) { 
+    grid-template-columns: repeat(4, 1fr);
+	}
+
+  @media only screen and (max-width: 1024px) { 
+    grid-template-columns: repeat(3, 1fr);
+	}
+
+  @media only screen and (max-width: 700px) { 
+    grid-template-columns: repeat(2, 1fr);
+	}
+
+  @media only screen and (max-width: 520px) { 
+    grid-template-columns: 1fr;
+	}
 }
 
 .projectTile {
@@ -95,6 +147,10 @@
       background: #cccccc;
     }
   }
+
+  @media only screen and (max-width: 520px) { 
+    max-width: 100%;
+	}
 }
 
 .projectTile__name {
@@ -143,6 +199,22 @@
   grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 2.5em;
   grid-row-gap: 2em;
+
+  @media only screen and (max-width: 1450px) { 
+    grid-template-columns: repeat(4, 1fr);
+	}
+
+  @media only screen and (max-width: 1024px) { 
+    grid-template-columns: repeat(3, 1fr);
+	}
+
+  @media only screen and (max-width: 700px) { 
+    grid-template-columns: repeat(2, 1fr);
+	}
+
+  @media only screen and (max-width: 520px) { 
+    grid-template-columns: 1fr;
+	}
 }
 
 .teamTile {
@@ -171,4 +243,8 @@
       color: $secondaryColor;
     }
   }
+
+  @media only screen and (max-width: 520px) { 
+    max-width: 100%;
+	}
 }

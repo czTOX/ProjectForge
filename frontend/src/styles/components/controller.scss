@@ -6,6 +6,16 @@
   margin-left: auto;
   padding: 1em;
   border: 1px solid $secondaryColor;
+
+  @media only screen and (max-width: 1250px) { 
+    max-width: fit-content;
+  }
+
+  @media only screen and (max-width: 500px) { 
+    padding: .4em;
+    margin-left: 0;
+    margin-bottom: .3em;
+  }
 }
 
 .controller__playPause {
@@ -48,6 +58,10 @@
   font-size: 20px;
   text-align: center;
   margin-right: 2em;
+
+  @media only screen and (max-width: 750px) { 
+    margin-right: 0.5em;
+  }
 }
 
 .controller__addManually {

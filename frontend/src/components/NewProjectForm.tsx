@@ -29,7 +29,7 @@ const NewProjectFrom: FC<NewProjectFormInterface> = (props: NewProjectFormInterf
       <div className="newProjectPopup">
         <form className="form" onSubmit={handleSubmit(onSubmit)}>
           <div className="form__input">
-            <input type='text' placeholder='Name' {...register('name', { required: true })}/>
+            <input type='text' placeholder='Name' maxLength={16} {...register('name', { required: true })}/>
           </div>
           <div className="form__input">
             <input type='text' placeholder='Description' {...register('description', { required: false })}/>
@@ -38,7 +38,7 @@ const NewProjectFrom: FC<NewProjectFormInterface> = (props: NewProjectFormInterf
             <input type='number' placeholder='Budget' {...register('budget', { required: false })}/>
           </div>
           <div className="form__input form__input--date">
-            <input type='date' placeholder='Name' {...register('deadline', { required: false })}/>
+            <input type='date' placeholder='Deadline' {...register('deadline', { required: false })}/>
           </div>
           <div className="newProjectPopup__buttons">
             <button className='form__button text-bold' onClick={() => {props.setOpened(false);}}>Back</button>

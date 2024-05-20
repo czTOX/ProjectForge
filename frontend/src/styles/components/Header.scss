@@ -1,4 +1,6 @@
 .header {
+  position: fixed;
+  width: calc(100vw - 6%);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,6 +10,7 @@
   height: 60px;
   background-color: $secondaryColor;
   color: white;
+  z-index: 60;
 }
 
 .header__logo {
@@ -54,4 +57,15 @@
       fill: $secondaryColor;
     }
   }
+
+  @media only screen and (max-width: 900px) { 
+    padding-left: 20px;
+    padding-right: 20px;
+	}
+}
+
+.header__navbar {
+  @media only screen and (max-width: 750px) { 
+    display: none;
+	}
 }

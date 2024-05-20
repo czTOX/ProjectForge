@@ -150,6 +150,10 @@
 
   select {
     width: calc(100% - 36px);;
+
+    @media only screen and (max-width: 1100px) { 
+      width: 100%;
+    }
   }
 
   option {
@@ -170,6 +174,11 @@
   width: 60px;
   height: 34px;
   margin-left: 1em;
+
+  @media only screen and (max-width: 1100px) { 
+    margin-left: 0;
+    margin-top: 0.2em;
+  }
 }
 
 .switch input {
