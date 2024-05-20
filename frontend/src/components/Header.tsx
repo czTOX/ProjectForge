@@ -33,9 +33,9 @@ const Header: FC = () => {
         </div>
         {isLoggedIn[0] &&
           <div className='header__navbar'>
-            <Link to='/user/teams' className='navbar__item heading'>Teams</Link>
-            <Link to='/user/projects' className='navbar__item heading'>Projects</Link>
-            <Link to='/user/settings' className='navbar__item heading'>Settings</Link>
+            <Link to='/teams' className='navbar__item heading'>Teams</Link>
+            <Link to='/projects' className='navbar__item heading'>Projects</Link>
+            <Link to='/settings' className='navbar__item heading'>Settings</Link>
             <div className='navbar__item heading' onClick={() => {logoutUser();}}>
               Logout
               <svg fill="#fff" height="16px" width="16px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.971 384.971">

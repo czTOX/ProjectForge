@@ -18,6 +18,9 @@ const LoginForm: FC = () => {
       setLoggedIn(true);
       navigate('/user');
     },
+    onError: () => {
+      alert("Invalid email or password!")
+    },
   });
   
   const { register, handleSubmit } = useForm<UserLogin>();

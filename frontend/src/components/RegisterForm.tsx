@@ -18,6 +18,9 @@ const RegisterForm: FC = () => {
       setLoggedIn(true);
       navigate('/user');
     },
+    onError: () => {
+      alert("Email is already taken!");
+    },
   });
   
   const { register, handleSubmit } = useForm<UserRegistration>();

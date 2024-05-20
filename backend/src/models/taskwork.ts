@@ -1,15 +1,20 @@
 import z from 'zod';
 
 export const TaskworkCreateSchema = z.object({
-  startedAt: z.coerce.date({ required_error: 'Missing `startedAt` parameter' }),
-  endedAt: z.coerce.date({ required_error: 'Missing `endedAt` parameter' }),
-  taskId: z.number({ required_error: 'Missing `taskId` parameter' }),
-  userId: z.number({ required_error: 'Missing `userId` parameter' }),
+  secondsSpent: z.coerce.number({ required_error: 'Missing `secondsSpent` parameter' }),
+  taskId: z.string({ required_error: 'Missing `taskId` parameter' }),
 });
 
 export const TaskworkSchema = z.object({
-  id: z.number({ required_error: 'Missing `id` parameter' }),
+  id: z.string().nonempty(),
+  createdAt: z.coerce.date({ required_error: 'Missing `createdAt` parameter' }),
+  userId: z.string({ required_error: 'Missing `userId` parameter' }),
 }).merge(TaskworkCreateSchema);
 
-export type TaskworkCreate = z.infer<typeof TaskworkCreateSchema>;
+export const TaskworkDeleteSchema = z.object({
+  id: z.string({ required_error: 'Missing `id` parameter' }).nonempty(),
+});
+
 export type Taskwork = z.infer<typeof TaskworkSchema>;
+export type TaskworkCreate = z.infer<typeof TaskworkCreateSchema>;
+export type TaskworkDelete = z.infer<typeof TaskworkDeleteSchema>;

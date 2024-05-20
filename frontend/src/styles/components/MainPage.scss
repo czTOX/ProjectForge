@@ -3,11 +3,172 @@
     color: $secondaryColor;
     font-size: 46px;
     font-weight: 700;
-    margin-top: 80px;
     margin-bottom: 10px;
   }
 
   h2 {
     font-size: 36px;
+    margin-bottom: 5px;
+    margin-top: .8em;
+  }
+}
+
+.taskLine {
+  display: grid;
+  grid-template-columns: 0.8fr 5fr repeat(3, 2fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  height: 35px;
+  border: 3px solid $secondaryColor;
+  border-radius: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  cursor: default;
+
+  &:not(:first-child) {
+    margin-top: .5em;
+  }
+}
+
+.taskLine__taskName {
+  font-size: 20px;
+  margin-left: 5%;
+
+  a {
+    text-decoration: none;
+    color: black;
+    transition: .3s;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.taskLine__asignee {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .avatar--small {
+    margin-left: .5em;
+  }
+}
+
+.taskLine__time {
+  margin-left: 15%;
+}
+
+.taskLine__deadline {
+  margin-left: 15%;
+}
+
+.main__projects {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 2.5em;
+  grid-row-gap: 2em;
+}
+
+.projectTile {
+  max-width: 300px;
+  width: 100%;
+  border: 3px solid $secondaryColor;
+  border-radius: 10px;
+  transition: .3s;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    border: 3px solid $focusColor;
+    cursor: pointer;
+
+    .projectTile__name {
+      background: $focusColor;
+
+      h5 {
+        color: $secondaryColor;
+      }
+    }
+
+    .projectTile__info {
+      background: #cccccc;
+    }
+  }
+}
+
+.projectTile__name {
+  padding: 2em 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $secondaryColor;
+  transition: .3s;
+
+  h5 {
+    font-size: 22px;
+    text-wrap: wrap;
+    color: $focusColor;
+    transition: .3s;
+  }
+}
+
+.projectTile__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1em;
+  row-gap: .9em;
+  transition: .3s;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+}
+
+.projectTile__workedOnBy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.projectTile__workers {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1em;
+  column-gap: 0.1em;
+}
+
+.main__teams {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 2.5em;
+  grid-row-gap: 2em;
+}
+
+.teamTile {
+  width: 100%;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $secondaryColor;
+  transition: .3s;
+  border-radius: 10px;
+  text-decoration: none;
+
+  h4 {
+    font-size: 22px;
+    text-wrap: wrap;
+    color: $focusColor;
+    transition: .3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: $focusColor;
+
+    h4 {
+      color: $secondaryColor;
+    }
   }
 }

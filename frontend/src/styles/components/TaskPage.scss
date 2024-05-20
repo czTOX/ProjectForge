@@ -1,0 +1,106 @@
+.task__page {
+  h1 {
+    color: $secondaryColor;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    
+
+    > a {
+      text-decoration: none;
+      color: $secondaryColor;
+      font-size: 46px;
+      font-weight: 700;
+      transition: .3s;
+
+      &:hover {
+        color: $focusColor;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-bottom: 5px;
+    margin-top: .8em;
+  }
+}
+
+.task__subheader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.task__info {
+  span {
+    display: block;
+    margin-top: 0.5em;
+  }
+}
+
+.task__workHistory {
+  margin-top: 1.5em;
+}
+
+.taskWorkLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid $secondaryColor;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 50px;
+  transition: .3s;
+
+  &:not(:first-child) {
+    margin-top: 0.5em;
+  }
+}
+
+.taskWorkLine__worker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .avatar--small {
+    margin-left: 1em;
+  }
+}
+
+.taskWorkLine__delete--button {
+  max-height: 35px;
+  max-width: 35px;
+
+  path {
+    transition: .3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    path {
+      stroke: $focusColor;
+      fill: $focusColor
+    }
+  }
+}
+
+.task__asignee {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: .3em;
+
+  .avatar--small {
+    margin-left: .5em;
+    text-decoration: none;
+    color: black;
+  }
+
+  span {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,68 @@
+.time__controller {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) 4fr 1fr;
+  align-items: center;
+  max-width: 20%;
+  margin-left: auto;
+  padding: 1em;
+  border: 1px solid $secondaryColor;
+}
+
+.controller__playPause {
+  height: 35px;
+  width: 35px;
+
+  path {
+    transition: .3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    path {
+      stroke: $focusColor;
+    }
+  }
+}
+
+.controller__stop {
+  height: 27px;
+  width: 27px;
+  border: 3px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: .3s;
+  background: $backgroundColor;
+}
+
+.controller__stop--active {
+  background: red;
+  border: 3px solid red;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.controller__time {
+  font-size: 20px;
+  text-align: center;
+  margin-right: 2em;
+}
+
+.controller__addManually {
+  width: 32px;
+  height: 32px;
+
+  path {
+    transition: .3s;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    path {
+      stroke: $focusColor;
+    }
+  }
+}

@@ -28,6 +28,10 @@ $bodyFont: "Roboto", sans-serif;
   font-weight: 600;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
 // Styles
 
 body {
@@ -49,13 +53,22 @@ body {
 }
 
 main {
-  height: calc(100vh - 60px - 40px)
+  height: calc(100vh - 60px - 40px);
+}
+
+.main {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .container {
   max-width: 78%;
   width: 100%;
   margin: auto;
+  padding-top: 80px;
+  padding-bottom: 100px;
+  min-height: calc(100vh - 60px - 40px - 180px);
 }
 
 .divider {
@@ -64,18 +77,101 @@ main {
   width: 250px;
 }
 
+.divider--long {
+  background: $secondaryColor;
+  height: 5px;
+  width: 100%;
+}
+
 .divider--small {
   background: $secondaryColor;
   height: 8px;
-  width: 100px;
+  width: 80px;
   margin-bottom: 20px;
+  transition: .3s;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-position: center !important;
+	background-size: cover !important;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $bodyFont;
+}
+
+.avatar--small {
+  width: 25px;
+  height: 25px;
+  border: 1px solid $secondaryColor;
+  border-radius: 12px;
+  background-position: center !important;
+	background-size: cover !important;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $bodyFont;
+}
+
+.avatar--empty {
+  background: $backgroundColor;
+}
+
+.subPage__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subPage__header--addNew {
+  border: 3px solid $secondaryColor;
+  font-size: 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: $secondaryColor;
+  padding: 1em 2em;
+  transition: .3s;
+  background: $backgroundColor;
+  cursor: pointer;
+
+  &:hover {
+    background: $secondaryColor;
+    color: $focusColor;
+  }
+}
+
+.subPage__buttons {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5em
+}
+
+.deadline--close {
+  color: red;
 }
 
 // Imports
 
+@import 'components/forms.scss';
+@import 'components/controller.scss';
+@import 'components/Header.scss';
+@import 'components/Footer.scss';
 @import 'components/LoginPage.scss';
 @import 'components/ErrorPage.scss';
 @import 'components/MainPage.scss';
-@import 'components/forms.scss';
-@import 'components/Header.scss';
-@import 'components/Footer.scss';
+@import 'components/TeamsPage.scss';
+@import 'components/TeamPage.scss';
+@import 'components/TeamSettingsPage.scss';
+@import 'components/ProjectsPage.scss';
+@import 'components/ProjectPage.scss';
+@import 'components/MessageBox.scss';
+@import 'components/TaskPage.scss';
+@import 'components/PopupForm.scss';

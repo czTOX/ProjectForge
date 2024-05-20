@@ -14,68 +14,99 @@ datasource db {
 }
 
 model User {
-  id                Int         @id @default(autoincrement())
-  hashedPassword    String
+  id                String      @id @default(uuid())
   email             String      @unique
+  hashedPassword    String
   firstName         String      @default("")
   lastName          String      @default("")
+  profilePic        String      @default("")
 
-  teams             Team[]      @relation("UsersTeams")
+  worksAt           WorksAt[]
   workHistory       TaskWork[]
   messages          Message[]
+  assignedTo        Task[]
+}
+
+model WorksAt {
+  id                String      @id @default(uuid())
+  user              User        @relation(fields: [userId], references: [id])
+  userId            String
+  team              Team        @relation(fields: [teamId], references: [id])
+  teamId            String
+  role              String      @default("Member")
+  permissionLevel   Int         @default(1)
 }
 
 model Team {
-  id                Int         @id @default(autoincrement())
+  id                String      @id @default(uuid())
   name              String
-  profilePic        String      @default("")
+  inviteCode        String      @default(cuid())
 
-  users             User[]      @relation("UsersTeams")
+  users             WorksAt[]
   projects          Project[]
 }
 
 model Project {
-  id                Int         @id @default(autoincrement())
+  id                String      @id @default(uuid())
   name              String
-  description       String
+  description       String      @default("")
+  deadline          DateTime?
+  budget            Int?
+  active            Boolean     @default(true)
 
   team              Team        @relation(fields: [teamId], references: [id])
-  teamId            Int
+  teamId            String
   tasks             Task[]
   messages          Message[]
+  files             File[]
 }
 
 model Task {
-  id                Int         @id @default(autoincrement())
+  id                String      @id @default(uuid())
   name              String
+  description       String      @default("")
+  active            Boolean     @default(true)
+  deadline          DateTime?
   createdAt         DateTime?   @default(now())
-  editedAt          DateTime?   @default(now())
-  status            Int         @default(0)
-  creatorId         Int
+  updatedAt         DateTime?   @updatedAt
 
   project           Project     @relation(fields: [projectId], references: [id])
-  projectId         Int
+  projectId         String
   workHistory       TaskWork[]
+  user              User?       @relation(fields: [userId], references: [id])
+  userId            String?
 }
 
 model TaskWork {
-  id                Int         @id @default(autoincrement())
-  startedAt         DateTime    @default(now())
-  endedAt           DateTime 
+  id                String      @id @default(uuid())
+  createdAt         DateTime    @default(now())
+  secondsSpent      Int
 
   user              User        @relation(fields: [userId], references: [id])
-  userId            Int
+  userId            String
   task              Task        @relation(fields: [taskId], references: [id])
-  taskId            Int
+  taskId            String
 }
 
 model Message {
-  id                Int         @id @default(autoincrement())
+  id                String      @id @default(uuid())
   content           String
-  postedAt          DateTime    @default(now())
+  createdAt         DateTime    @default(now())
 
   author            User        @relation(fields: [authorId], references: [id])
-  authorId          Int
+  authorId          String
   project           Project     @relation(fields: [projectId], references: [id])
-  projectId         Int
+  projectId         String
+}
+
+model File {
+  id                String      @id @default(uuid())
+  originalName      String
+  fileName          String
+  size              Int
+  type              String
+  uploadedAt        DateTime    @default(now())
+
+  project           Project     @relation(fields: [projectId], references: [id])
+  projectId         String
 }

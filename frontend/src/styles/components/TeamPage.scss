@@ -1,0 +1,162 @@
+.team__page {
+  h1 {
+    color: $secondaryColor;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+}
+
+.team__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1em;
+}
+
+.team__main {
+  max-width: 73%;
+  width: 100%;
+}
+
+.team__sidebar {
+  position: sticky;
+  max-width: 22%;
+  width: 100%;
+  border: 1px solid $secondaryColor;
+  height: 600px;
+}
+
+.sidebar__header {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0;
+  border-bottom: 1px solid $secondaryColor;
+}
+
+.sidebar__members {
+  display: flex;
+  flex-direction: column;
+  background: #ccc;
+}
+
+.sidebar__member {
+  padding: 1em;
+  display: flex;
+  flex-direction: row;
+  transition: .3s;
+
+  &:hover {
+    background: $secondaryColor;
+    color: $focusColor;
+    cursor: default;
+
+    .avatar {
+      border: 1px solid $focusColor;
+    }
+  }
+}
+
+.sidebar__member--clickable {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sidebar__member--new {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.member__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2em;
+}
+
+.member__info--name {
+  font-size: 16px;
+}
+
+.member__info--role {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+}
+
+.files__heading {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  h2 {
+    margin-top: 0 !important;
+  }
+}
+
+.team__newFiles {
+  display: none;
+}
+
+.newFile__button {
+  display: block;
+  border: 3px solid $secondaryColor;
+  font-size: 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: $secondaryColor;
+  padding: 0.8em 1.5em;
+  transition: .3s;
+  background: $backgroundColor;
+  cursor: pointer;
+
+  &:hover {
+    background: $secondaryColor;
+    color: $focusColor;
+  }
+}
+
+.newProjectPopup {
+  padding: 0 4em 0 4em;
+  border-radius: 20px;
+  background: $secondaryColor;
+  width: 15%;
+
+  .form__input {
+    max-width: 100%;
+  }
+
+  .form__input--date {
+    color-scheme: dark;
+  }
+}
+
+.newProjectPopup__buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  column-gap: 1.5em;
+
+  .form__button {
+    margin-top: 1.5em;
+  }
+}
+
+.changeRolePopup__member {
+  display: flex;
+  flex-direction: row;
+  color: white;
+
+  .avatar {
+    color: $focusColor;
+    border: 1px solid $focusColor;
+  }
+}
+
+#newRole {
+  width: 100%;
+  font-size: 18px;
+}

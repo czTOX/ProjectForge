@@ -1,0 +1,79 @@
+.projects__page {
+  h1 {
+    color: $secondaryColor;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+}
+
+.projectsFilter {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 40px;
+  border: 1px solid $secondaryColor;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  row-gap: .7em;
+  margin-top: 50px;
+}
+
+.projects__project {
+  border: 1px solid $secondaryColor;
+  padding: 1em 4em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  text-decoration: none;
+  color: black;
+
+  &:hover {
+    background: #ccc;
+    cursor: pointer;
+    
+    h3 {
+      text-decoration: underline;
+    }
+  }
+  
+  h3 {
+    margin: 0;
+    transition: 0.3s;
+  }
+}
+
+.projects__project--finnished {
+  opacity: .6;
+}
+
+.project__progressLine {
+  height: 24px;
+  max-width: 500px;
+  width: 100%;
+  border: 2px solid $secondaryColor;
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $backgroundColor;
+
+  span {
+    z-index: 2;
+  }
+}
+
+.project__progressLine--done {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  border-radius: 15px;
+  background: $focusColor;
+}
