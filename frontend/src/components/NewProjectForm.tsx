@@ -5,12 +5,24 @@ import { NewProject } from '../models';
 import { ProjectsApi } from '../services';
 import { useForm } from 'react-hook-form';
 
+
+/**
+ * Interface for NewProjectForm component
+ *
+ * @interface NewProjectFormInterface
+ * @typedef {NewProjectFormInterface}
+ */
 interface NewProjectFormInterface {
   teamId: string,
   setOpened: Function,
 }
 
-
+/**
+ * NewProjectForm component
+ *
+ * @param {NewProjectFormInterface} props
+ * @returns {*}
+ */
 const NewProjectFrom: FC<NewProjectFormInterface> = (props: NewProjectFormInterface) => {
   const navigate = useNavigate();
 

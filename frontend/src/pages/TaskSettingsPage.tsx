@@ -6,6 +6,11 @@ import { useForm } from 'react-hook-form';
 import { EditTask } from '../models';
 
 
+/**
+ * Task Settings Page
+ *
+ * @returns {*}
+ */
 const TaskSettingsPage: FC = () => {
 
   const navigate = useNavigate();

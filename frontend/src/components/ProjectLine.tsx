@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import { projectProgress } from '../functions/project';
 
 
+/**
+ * ProjectLine component
+ *
+ * @param {ProjectLineInterface} props
+ * @returns {*}
+ */
 const ProjectLine: FC<ProjectLineInterface> = (props: ProjectLineInterface) => {
   return (
     <Link to={`/projects/${props.id}`} className="projects__project">

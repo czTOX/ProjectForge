@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom';
 import { ProjectMin } from '../models';
 
 
+/**
+ * ProjectTile component
+ *
+ * @param {ProjectMin} props
+ * @returns {*}
+ */
 const ProjectTile: FC<ProjectMin> = (props: ProjectMin) => {
 
   return (

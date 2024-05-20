@@ -6,6 +6,11 @@ import { JoinTeam, NewTeam } from '../models';
 import { useForm } from 'react-hook-form';
 
 
+/**
+ * Teams Page
+ *
+ * @returns {*}
+ */
 const TeamsPage: FC = () => {
   const navigate = useNavigate();
   const [ opened, setOpened ] = useState(false);

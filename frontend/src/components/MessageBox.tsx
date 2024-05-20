@@ -5,12 +5,24 @@ import { useMutation } from '@tanstack/react-query';
 import { ProjectsApi } from '../services';
 import { SERVER_URL } from '../variables';
 
+/**
+ * Interface for the component MessageBox
+ *
+ * @interface MessageBoxInterface
+ * @typedef {MessageBoxInterface}
+ */
 interface MessageBoxInterface {
   projectId: string;
   messages: Message[];
   setMessages: Function;
 }
 
+/**
+ * MessageBox component
+ *
+ * @param {MessageBoxInterface} props
+ * @returns {*}
+ */
 const MessageBox: FC<MessageBoxInterface> = (props: MessageBoxInterface) => {
   const { mutate: postMessage } = useMutation({
     mutationFn: (body: MessageCreate) => ProjectsApi.postMessage(props.projectId, body),

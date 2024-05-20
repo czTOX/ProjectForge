@@ -2,6 +2,13 @@ import { JoinTeam, NewRole, NewTeam, ResponseSingle, Team, TeamEdit, TeamMembers
 import axiosInstance from "./base";
 
 
+/**
+ * createTeam API call
+ *
+ * @async
+ * @param {NewTeam} content
+ * @returns {Promise<ResponseSingle<Team>>}
+ */
 export const createTeam = async (
   content: NewTeam
 ): Promise<ResponseSingle<Team>> => {
@@ -9,6 +16,13 @@ export const createTeam = async (
   return response.data;
 };
 
+/**
+ * joinTeam API call
+ *
+ * @async
+ * @param {JoinTeam} content
+ * @returns {Promise<ResponseSingle<WorksAt>>}
+ */
 export const joinTeam = async (
   content: JoinTeam
 ): Promise<ResponseSingle<WorksAt>> => {
@@ -16,6 +30,13 @@ export const joinTeam = async (
   return response.data;
 };
 
+/**
+ * getSingle API call
+ *
+ * @async
+ * @param {string} teamId
+ * @returns {Promise<ResponseSingle<TeamWithRole>>}
+ */
 export const getSingle = async (
   teamId: string
 ): Promise<ResponseSingle<TeamWithRole>> => {
@@ -23,6 +44,13 @@ export const getSingle = async (
   return response.data;
 };
 
+/**
+ * getMembers API call
+ *
+ * @async
+ * @param {string} teamId
+ * @returns {Promise<ResponseSingle<TeamMembers>>}
+ */
 export const getMembers = async (
   teamId: string
 ): Promise<ResponseSingle<TeamMembers>> => {
@@ -30,6 +58,13 @@ export const getMembers = async (
   return response.data;
 };
 
+/**
+ * editTeam API call
+ *
+ * @async
+ * @param {TeamEdit} content
+ * @returns {Promise<ResponseSingle<Team>>}
+ */
 export const editTeam = async (
   content: TeamEdit
 ): Promise<ResponseSingle<Team>> => {
@@ -37,6 +72,13 @@ export const editTeam = async (
   return response.data;
 };
 
+/**
+ * changeRole API call
+ *
+ * @async
+ * @param {NewRole} content
+ * @returns {Promise<ResponseSingle<WorksAt>>}
+ */
 export const changeRole = async (
   content: NewRole
 ): Promise<ResponseSingle<WorksAt>> => {

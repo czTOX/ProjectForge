@@ -6,6 +6,11 @@ import { useForm } from 'react-hook-form';
 import { EditProject } from '../models';
 
 
+/**
+ * Project Setting Page
+ *
+ * @returns {*}
+ */
 const ProjectSettingPage: FC = () => {
 
   const navigate = useNavigate();

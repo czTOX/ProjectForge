@@ -2,6 +2,13 @@ import { CustomFile, EditProject, Message, MessageCreate, NewProject, Project, R
 import axiosInstance from "./base";
 
 
+/**
+ * createProject API call
+ *
+ * @async
+ * @param {NewProject} content
+ * @returns {Promise<ResponseSingle<Project>>}
+ */
 export const createProject = async (
   content: NewProject
 ): Promise<ResponseSingle<Project>> => {
@@ -9,6 +16,13 @@ export const createProject = async (
   return response.data;
 };
 
+/**
+ * getSingle API call
+ *
+ * @async
+ * @param {string} projectId
+ * @returns {Promise<ResponseSingle<Project>>}
+ */
 export const getSingle = async (
   projectId: string
 ): Promise<ResponseSingle<Project>> => {
@@ -16,6 +30,14 @@ export const getSingle = async (
   return response.data;
 };
 
+/**
+ * editProject API call
+ *
+ * @async
+ * @param {string} projectId
+ * @param {EditProject} content
+ * @returns {Promise<ResponseSingle<Project>>}
+ */
 export const editProject = async (
   projectId: string,
   content: EditProject
@@ -31,6 +53,13 @@ export const editProject = async (
   return response.data;
 };
 
+/**
+ * addFiles API call
+ *
+ * @async
+ * @param {FormData} content
+ * @returns {Promise<ResponseSingle<Project>>}
+ */
 export const addFiles = async (
   content: FormData
 ): Promise<ResponseSingle<Project>> => {
@@ -41,6 +70,13 @@ export const addFiles = async (
   return response.data;
 };
 
+/**
+ * deleteFile API call
+ *
+ * @async
+ * @param {string} id
+ * @returns {Promise<ResponseSingle<CustomFile>>}
+ */
 export const deleteFile = async (
   id: string,
 ): Promise<ResponseSingle<CustomFile>> => {
@@ -48,9 +84,16 @@ export const deleteFile = async (
   return response.data;
 };
 
-
 //messages
 
+/**
+ * postMessage API call
+ *
+ * @async
+ * @param {string} projectId
+ * @param {MessageCreate} content
+ * @returns {Promise<ResponseSingle<Message>>}
+ */
 export const postMessage = async (
   projectId: string,
   content: MessageCreate,

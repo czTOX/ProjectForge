@@ -6,6 +6,12 @@ import { useStopwatch } from 'react-timer-hook';
 import { addLeadingZeros } from '../functions/timerController';
 import { calcutalTotalTime } from '../functions/project';
 
+/**
+ * Interface for TimeController component
+ *
+ * @interface TimeControllerInterface
+ * @typedef {TimeControllerInterface}
+ */
 interface TimeControllerInterface {
   taskId: string;
   workHistory: TaskWorkWithUser[];
@@ -14,6 +20,12 @@ interface TimeControllerInterface {
   setOpened: Function;
 }
 
+/**
+ * TimeController component
+ *
+ * @param {TimeControllerInterface} props
+ * @returns {*}
+ */
 const TimeController: FC<TimeControllerInterface> = (props: TimeControllerInterface) => {
 
   function timerStop() {

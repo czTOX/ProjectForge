@@ -10,6 +10,11 @@ import ProjectFileLine from '../components/ProjectFileLine';
 import MessageBox from '../components/MessageBox';
 
 
+/**
+ * Project Page
+ *
+ * @returns {*}
+ */
 const ProjectPage: FC = () => {
   const { id } = useParams();
   const [ opened, setOpened ] = useState(false);

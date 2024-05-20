@@ -2,6 +2,13 @@ import { Task, TaskMin } from './taskTypes';
 import { Message } from './messageTypes';
 import { Team } from './teamTypes';
 
+/**
+ * Interface for Project
+ *
+ * @export
+ * @interface Project
+ * @typedef {Project}
+ */
 export interface Project {
   id: string;
   name: string;
@@ -15,6 +22,13 @@ export interface Project {
   files: [CustomFile],
 }
 
+/**
+ * Interface for ProjectMin
+ *
+ * @export
+ * @interface ProjectMin
+ * @typedef {ProjectMin}
+ */
 export interface ProjectMin {
   id: string;
   name: string;
@@ -24,6 +38,13 @@ export interface ProjectMin {
   }
 }
 
+/**
+ * Interface for editing a project
+ *
+ * @export
+ * @interface EditProject
+ * @typedef {EditProject}
+ */
 export interface EditProject {
   name: string;
   description: string;
@@ -32,6 +53,13 @@ export interface EditProject {
   active: boolean;
 }
 
+/**
+ * Interface for creating a project
+ *
+ * @export
+ * @interface NewProject
+ * @typedef {NewProject}
+ */
 export interface NewProject {
   name: string;
   teamId: string;
@@ -40,12 +68,26 @@ export interface NewProject {
   deadline: Date;
 }
 
+/**
+ * Interface for ProjectLine component
+ *
+ * @export
+ * @interface ProjectLineInterface
+ * @typedef {ProjectLineInterface}
+ */
 export interface ProjectLineInterface {
   id: string;
   name: string;
   tasks: [TaskMin];
 }
 
+/**
+ * Interface MyProjects response
+ *
+ * @export
+ * @interface MyProjectsResponse
+ * @typedef {MyProjectsResponse}
+ */
 export interface MyProjectsResponse {
   id: string;
   worksAt: [{
@@ -60,7 +102,13 @@ export interface MyProjectsResponse {
   }];
 }
 
-
+/**
+ * Interface for CustomFile
+ *
+ * @export
+ * @interface CustomFile
+ * @typedef {CustomFile}
+ */
 export interface CustomFile {
   id: string;
   originalName: string,

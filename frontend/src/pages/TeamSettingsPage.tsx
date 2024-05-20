@@ -6,6 +6,11 @@ import { useForm } from 'react-hook-form';
 import { NewTeam } from '../models';
 
 
+/**
+ * Team Settings Page
+ *
+ * @returns {*}
+ */
 const TeamSettingsPage: FC = () => {
 
   const navigate = useNavigate();

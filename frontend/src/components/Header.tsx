@@ -7,6 +7,11 @@ import { UsersApi } from '../services';
 import { useMutation } from '@tanstack/react-query';
 
 
+/**
+ * Header component
+ *
+ * @returns {*}
+ */
 const Header: FC = () => {
   function toggleMenu() {
     document.getElementById('menu')?.classList.toggle('menu--show');

@@ -18,6 +18,11 @@ import ProjectSettingsPage from './pages/ProjectSettingsPage';
 import TaskSettingsPage from './pages/TaskSettingsPage';
 import Menu from './components/Menu';
 
+/**
+ * Main App function
+ *
+ * @returns {*}
+ */
 function App() {
   const isLoggedIn = useRecoilState(loggedInAtom);
   

@@ -5,6 +5,13 @@ import { NewTaskWork, NewTaskWorkData, TaskWorkWithUser } from '../models';
 import { TasksApi } from '../services';
 import { calcutalTotalTime } from '../functions/project';
 
+
+/**
+ * Interface for NewWorkForm component
+ *
+ * @interface NewWorkFormInterface
+ * @typedef {NewWorkFormInterface}
+ */
 interface NewWorkFormInterface {
   taskId: string,
   workHistory: TaskWorkWithUser[],
@@ -13,7 +20,12 @@ interface NewWorkFormInterface {
   setOpened: Function,
 }
 
-
+/**
+ * NewWorkForm component
+ *
+ * @param {NewWorkFormInterface} props
+ * @returns {*}
+ */
 const NewWorkForm: FC<NewWorkFormInterface> = (props: NewWorkFormInterface) => {
   const { mutate: postTaskWork } = useMutation({
     mutationFn: (body: NewTaskWork) => TasksApi.postTaskWork(body),

@@ -7,12 +7,24 @@ import { useMutation } from '@tanstack/react-query';
 import { SERVER_URL } from '../variables';
 
 
+/**
+ * Interface for NewProjectForm component
+ *
+ * @interface NewProjectFormInterface
+ * @typedef {NewProjectFormInterface}
+ */
 interface NewProjectFormInterface {
   task: Task,
   tasks: Task[] | undefined,
   setTasks: Function | undefined,
 }
 
+/**
+ * NewProjectForm component
+ *
+ * @param {NewProjectFormInterface} props
+ * @returns {*}
+ */
 const TaskLine: FC<NewProjectFormInterface> = (props: NewProjectFormInterface) => {
   const { mutate: taskDone } = useMutation({
     mutationFn: () => TasksApi.checkedTask(props.task.id, !props.task.active),

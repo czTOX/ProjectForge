@@ -1,6 +1,13 @@
 import { Task, TaskMin, TaskWorkWithUser } from "../models";
 import { addLeadingZeros } from "./timerController";
 
+/**
+ * Return formated date in following format: DD.MM.YYYY
+ *
+ * @export
+ * @param {(Date | undefined)} date
+ * @returns {string}
+ */
 export function readableDate(date: Date | undefined) {
   if (!date) {
     return ""
@@ -9,6 +16,13 @@ export function readableDate(date: Date | undefined) {
   return (date.getDate().toString() + '. ' + (date.getMonth() + 1).toString() + '.' + date.getFullYear().toString());
 }
 
+/**
+ * Checks if date is 5 days on closer
+ *
+ * @export
+ * @param {(Date | undefined)} date
+ * @returns {(boolean | "")}
+ */
 export function isClose(date: Date | undefined) {
   if (!date) {
     return ""
@@ -18,6 +32,13 @@ export function isClose(date: Date | undefined) {
   return (date.getTime() - Date.now()) < 432000000;
 }
 
+/**
+ * Calculates project progres in %
+ *
+ * @export
+ * @param {(Task[] | TaskMin[] | undefined)} tasks
+ * @returns {*}
+ */
 export function projectProgress(tasks: Task[] | TaskMin[] | undefined) {
   if (tasks && tasks.length > 0) {
     let done: number = 0;
@@ -30,6 +51,13 @@ export function projectProgress(tasks: Task[] | TaskMin[] | undefined) {
   return 0;
 }
 
+/**
+ * Calculates total time spend on a project
+ *
+ * @export
+ * @param {(Task[] | undefined)} tasks
+ * @returns {(string | 0)}
+ */
 export function projectTotalTime(tasks: Task[] | undefined) {
   if (tasks) {
     let total: number = 0;
@@ -51,6 +79,13 @@ export function projectTotalTime(tasks: Task[] | undefined) {
   return 0;
 }
 
+/**
+ * Calculates total time spend on a task
+ *
+ * @export
+ * @param {TaskWorkWithUser[]} work
+ * @returns {string}
+ */
 export function calcutalTotalTime(work: TaskWorkWithUser[]) {
   let total: number = 0;
   for (let i = 0; i < work.length; i++) {
@@ -59,6 +94,13 @@ export function calcutalTotalTime(work: TaskWorkWithUser[]) {
   return formatSecondsToTime(total);
 }
 
+/**
+ * Format given number of seconds to following format: 00h 00m 00s
+ *
+ * @export
+ * @param {number} total
+ * @returns {string}
+ */
 export function formatSecondsToTime(total: number) {
   let hours: number = Math.floor(total / 3600);
   total %= 3600;

@@ -7,6 +7,11 @@ import ProjectTile from '../components/ProjectTile';
 import { Task } from '../models';
 
 
+/**
+ * Main Page
+ *
+ * @returns {*}
+ */
 const MainPage: FC = () => {
 
   const { data: myAll } = useQuery({

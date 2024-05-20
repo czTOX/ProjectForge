@@ -10,6 +10,11 @@ import NewWorkForm from '../components/NewWorkForm';
 import { SERVER_URL } from '../variables';
 
 
+/**
+ * Task Page
+ *
+ * @returns {*}
+ */
 const TaskPage: FC = () => {
   const { id } = useParams();
 

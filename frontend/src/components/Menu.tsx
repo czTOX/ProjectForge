@@ -6,6 +6,11 @@ import { useMutation } from '@tanstack/react-query';
 import { UsersApi } from '../services';
 
 
+/**
+ * Menu component
+ *
+ * @returns {*}
+ */
 const Menu: FC = () => {
 
   const navigate = useNavigate();

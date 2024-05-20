@@ -5,12 +5,25 @@ import { useMutation } from '@tanstack/react-query';
 import { ProjectsApi } from '../services';
 import { SERVER_URL } from '../variables';
 
+
+/**
+ * Interface for ProjectFileLine component
+ *
+ * @interface ProjectFileLineInterface
+ * @typedef {ProjectFileLineInterface}
+ */
 interface ProjectFileLineInterface {
   file: CustomFile;
   files: CustomFile[];
   setFiles: Function;
 }
 
+/**
+ * ProjectFileLine component
+ *
+ * @param {ProjectFileLineInterface} props
+ * @returns {*}
+ */
 const ProjectFileLine: FC<ProjectFileLineInterface> = (props: ProjectFileLineInterface) => {
   function shortenBytes(n: number) {
     const k = n > 0 ? Math.floor((Math.log2(n)/10)) : 0;

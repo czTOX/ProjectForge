@@ -8,6 +8,11 @@ import { SERVER_URL } from '../variables';
 import ChangeRoleForm from '../components/ChangeRoleForm';
 import { WorksAt } from '../models';
 
+/**
+ * Team Page
+ *
+ * @returns {*}
+ */
 const TeamPage: FC = () => {
 
   function roleChangePopup(work: WorksAt) {

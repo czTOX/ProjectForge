@@ -6,6 +6,11 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { UsersApi } from '../services';
 
 
+/**
+ * Settings Page
+ *
+ * @returns {*}
+ */
 const SettingsPage: FC = () => {
   const navigate = useNavigate();
 

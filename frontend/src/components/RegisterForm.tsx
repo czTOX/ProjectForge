@@ -7,6 +7,11 @@ import { UsersApi } from '../services';
 import { useSetRecoilState } from 'recoil';
 import { loggedInAtom } from '../state/atoms';
 
+/**
+ * RegisterForm component
+ *
+ * @returns {*}
+ */
 const RegisterForm: FC = () => {
   const setLoggedIn = useSetRecoilState(loggedInAtom);
   const navigate = useNavigate();

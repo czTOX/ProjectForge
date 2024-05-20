@@ -4,6 +4,11 @@ import { useQuery } from '@tanstack/react-query';
 import ProjectLine from '../components/ProjectLine';
 
 
+/**
+ * Projects Page
+ *
+ * @returns {*}
+ */
 const ProjectsPage: FC = () => {
   const { data: myProjects } = useQuery({
     queryKey: ['myProjects'],

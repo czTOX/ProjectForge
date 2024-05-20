@@ -3,6 +3,11 @@ import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
 
 
+/**
+ * Login Page
+ *
+ * @returns {*}
+ */
 const LoginPage: FC = () => {
   const [hasAccount, setHasAccount] = useState<Boolean>(true);
 

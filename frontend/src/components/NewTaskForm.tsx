@@ -5,12 +5,24 @@ import { useForm } from 'react-hook-form';
 import { NewTask } from '../models';
 import { TasksApi } from '../services';
 
+/**
+ * Interface for NewTaskForm component
+ *
+ * @interface NewTaskFormInterface
+ * @typedef {NewTaskFormInterface}
+ */
 interface NewTaskFormInterface {
   projectId: string,
   setOpened: Function,
 }
 
 
+/**
+ * NewTaskForm component
+ *
+ * @param {NewTaskFormInterface} props
+ * @returns {*}
+ */
 const NewTaskForm: FC<NewTaskFormInterface> = (props: NewTaskFormInterface) => {
   const navigate = useNavigate();
 

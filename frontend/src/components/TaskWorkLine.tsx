@@ -6,6 +6,12 @@ import { useMutation } from '@tanstack/react-query';
 import { SERVER_URL } from '../variables';
 
 
+/**
+ * Interface for TaskWorkLine component
+ *
+ * @interface TaskWorkLineInterface
+ * @typedef {TaskWorkLineInterface}
+ */
 interface TaskWorkLineInterface {
   taskWork: TaskWorkWithUser;
   workHistory: TaskWorkWithUser[];
@@ -13,6 +19,12 @@ interface TaskWorkLineInterface {
   setTimeSpent: Function;
 }
 
+/**
+ * TaskWorkLine component
+ *
+ * @param {TaskWorkLineInterface} props
+ * @returns {*}
+ */
 const TaskWorkLine: FC<TaskWorkLineInterface> = (props: TaskWorkLineInterface) => {
 
   function removeTaskWork(input: TaskWorkWithUser) {

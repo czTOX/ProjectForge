@@ -4,6 +4,11 @@ import { useRecoilState } from 'recoil';
 import { loggedInAtom } from '../state/atoms';
 
 
+/**
+ * Error Page
+ *
+ * @returns {*}
+ */
 const ErrorPage: FC = () => {
 
   const isLoggedIn = useRecoilState(loggedInAtom);

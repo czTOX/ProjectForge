@@ -5,6 +5,12 @@ import { TeamsApi } from '../services';
 import { useForm } from 'react-hook-form';
 import { SERVER_URL } from '../variables';
 
+/**
+ * Interface for ChangeRoleForm component
+ *
+ * @interface ChangeRoleFormInterface
+ * @typedef {ChangeRoleFormInterface}
+ */
 interface ChangeRoleFormInterface {
   work: WorksAt;
   setOpened: Function;
@@ -13,6 +19,12 @@ interface ChangeRoleFormInterface {
   setPermissionLevel: Function;
 }
 
+/**
+ * ChangeRoleForm component
+ *
+ * @param {ChangeRoleFormInterface} props
+ * @returns {*}
+ */
 const ChangeRoleForm: FC<ChangeRoleFormInterface> = (props: ChangeRoleFormInterface) => {
 
   const roles = ['Member', 'Project manager'];

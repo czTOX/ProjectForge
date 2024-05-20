@@ -2,6 +2,13 @@ import { Project } from './projectTypes';
 import { TaskWorkWithUser } from './taskWorkTypes';
 import { User } from './userTypes';
 
+/**
+ * Interface for Task
+ *
+ * @export
+ * @interface Task
+ * @typedef {Task}
+ */
 export interface Task {
   id: string;
   name: string;
@@ -16,6 +23,13 @@ export interface Task {
   workHistory: [TaskWorkWithUser]
 }
 
+/**
+ * Interface for creating new Task
+ *
+ * @export
+ * @interface NewTask
+ * @typedef {NewTask}
+ */
 export interface NewTask {
   projectId: string;
   name: string;
@@ -23,7 +37,13 @@ export interface NewTask {
   deadline: Date | null;
 }
 
-
+/**
+ * Interface for editing new Task
+ *
+ * @export
+ * @interface EditTask
+ * @typedef {EditTask}
+ */
 export interface EditTask {
   name: string;
   description: string;
@@ -32,6 +52,13 @@ export interface EditTask {
   active: boolean;
 }
 
+/**
+ * Interface for sending EditTask to the server
+ *
+ * @export
+ * @interface EditTask
+ * @typedef {EditTask}
+ */
 export interface EditTaskContent {
   id: string;
   name: string;
@@ -41,6 +68,13 @@ export interface EditTaskContent {
   active: boolean;
 }
 
+/**
+ * Interface for TaskMin
+ *
+ * @export
+ * @interface TaskMin
+ * @typedef {TaskMin}
+ */
 export interface TaskMin {
   id: string;
   name: string;
@@ -50,6 +84,13 @@ export interface TaskMin {
   workHistory: [TaskWorkWithUser]
 }
 
+/**
+ * Interface for assigning user to the task
+ *
+ * @export
+ * @interface TaskAssign
+ * @typedef {TaskAssign}
+ */
 export interface TaskAssign {
   taskId: string;
   userId: string;
