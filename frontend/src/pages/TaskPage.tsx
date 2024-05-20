@@ -36,7 +36,7 @@ const TaskPage: FC = () => {
       {opened && 
         <NewWorkForm taskId={task?.data.id || ''} workHistory={workHistory} setWorkHistory={setWorkHistory} setTimeSpent={setTimeSpent} setOpened={setOpened} />
       }
-      <div className="container project__page task__page">
+      <div className="container project__page taskDetail__page">
       <div className="subPage__header">
         <div>
           <h1 className="heading">{task?.data.name}</h1>

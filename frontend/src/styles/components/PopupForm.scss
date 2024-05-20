@@ -32,6 +32,10 @@
         padding: 0.5em 0;
         width: 15em;
         margin-left: 2em;
+
+        @media only screen and (max-width: 550px) { 
+          margin-left: .2em;
+        }
       }
 
     }
@@ -40,6 +44,10 @@
       margin-top: 2em;
     }
   }
+
+  @media only screen and (max-width: 550px) { 
+		padding: 2em 1em;
+	}
 }
 
 .newTeamForm__buttons {
